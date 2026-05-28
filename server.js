@@ -39,6 +39,7 @@ const filesRoutes = require('./modules/files/files.routes');
 const searchRoutes = require('./modules/search/search.routes');
 const dashboardRoutes = require('./modules/dashboard/dashboard.routes');
 const tenantRoutes = require('./modules/tenant/tenant.routes');
+const webhooksRoutes = require('./modules/webhooks/webhooks.routes');
 
 const app = express();
 
@@ -106,6 +107,7 @@ app.use('/api/files', filesRoutes);
 app.use('/api/search', searchRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/tenant', tenantRoutes);
+app.use('/api/webhooks', webhooksRoutes);
 
 // ── Static serving of public uploads (if requested/public) ──
 app.use('/uploads', express.static(config.upload.dir));
